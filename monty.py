@@ -11,7 +11,6 @@ from ast import literal_eval
 from datetime import datetime
 
 import monty_core as core
-import stickman
 
 FACES = {
     "idle": "(^_^)",
@@ -274,14 +273,9 @@ def make_assistant_handlers(state):
         import random
         return random.choice(core.JOKES), "cool"
 
-    def h_dance(args):
-        stickman.play(steps=16, delay=0.1)
-        return "That's my one dance move.", "cool"
-
     return {
         "NAME": h_name, "NOTE": h_note, "NOTES": h_notes, "CLEARNOTES": h_clearnotes,
         "TIME": h_time, "DATE": h_date, "JOKE": h_joke,
-        "DANCE": h_dance, "STICKMAN": h_dance,
     }
 
 
@@ -331,7 +325,7 @@ Matrices         DETERMINANT/INVERSE/TRANSPOSE [[1,2],[3,4]]
                  MATRIXMULTIPLY [[1,2]] * [[1],[2]]
 Statistics       STATS 1 2 3 4 5
 Conversions      CONVERT 5 miles to km   (length, weight, or C/F/K temperature)
-Assistant        NAME <yours>, NOTE <text>, NOTES, CLEARNOTES, TIME, DATE, JOKE, DANCE
+Assistant        NAME <yours>, NOTE <text>, NOTES, CLEARNOTES, TIME, DATE, JOKE
 Session          HELP, EXIT / QUIT / BYE / CLOSE
 """
 
