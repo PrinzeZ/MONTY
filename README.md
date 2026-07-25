@@ -37,7 +37,7 @@ python monty.py
 | Matrices | `DETERMINANT`/`INVERSE`/`TRANSPOSE [[1,2],[3,4]]`, `MATRIXMULTIPLY [[1,2]] * [[1],[2]]` |
 | Statistics | `STATS 1 2 3 4 5` — count, mean, median, mode(s), variance, stdev |
 | Conversions | `CONVERT 5 miles to km` (length, weight, or C/F/K temperature) |
-| Assistant | `NAME <yours>`, `NOTE <text>`, `NOTES`, `CLEARNOTES`, `TIME`, `DATE`, `JOKE`, `DANCE` |
+| Assistant | `NAME <yours>`, `NOTE <text>`, `NOTES`, `CLEARNOTES`, `TIME`, `DATE`, `JOKE` |
 | Session | `HELP`, `EXIT` / `QUIT` / `BYE` / `CLOSE` |
 
 The algebra/calculus/matrix commands are backed by [SymPy](https://www.sympy.org/),
@@ -52,20 +52,9 @@ MONTY remembers your name and notes between runs (in `monty_profile.json` /
 ```
 monty_core.py     # All math + assistant logic — no input()/print(), fully testable
 monty.py          # Terminal front end: parsing, personality, ASCII faces
-stickman.py       # A small animated easter egg (see below), also runs standalone
 test_monty.py     # Scripted run through every command category
 requirements.txt
 ```
-
-## The stickman easter egg
-
-`stickman.py` was a separate, unfinished project — an attempt at animating a
-walking stick figure in the terminal that never actually worked, because the
-draw and erase phases printed different numbers of lines and the frames
-never lined up. It's rebuilt here (clears the screen each frame instead of
-manually counting cursor moves) and wired into MONTY as `DANCE` /
-`STICKMAN`, purely for fun. Run `python stickman.py` directly if you just
-want the animation on its own.
 
 ## Testing
 
